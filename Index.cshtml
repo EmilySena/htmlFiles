@@ -1,0 +1,32 @@
+@model Exemplo.Models.Pessoa
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo</h1>
+</div>
+<@using(Html.BeginForm("Lista","Home", FormMethod.Post))>
+    <fieldset>
+        <legend>Pessoa</legend>
+        <div>
+            @Html.LabelFor(x=>x.PessoaId)
+        </div>
+        <div>
+            @Html.EditorFor(x=>x.PessoaId)
+        </div>
+        <div>
+            @Html.LabelFor(x=>x.Nome)
+        </div>
+        <div>
+            @Html.EditorFor(x=>x.Nome)
+        </div>
+        <div>
+            @Html.LabelFor(x=>x.Pais)
+        </div>
+        <div>
+            @Html.EditorFor(x=>x.Pais)
+        </div>
+        <p><input type ="submit" value="Enviar"/></p>
+    </fieldset>
+</form>
